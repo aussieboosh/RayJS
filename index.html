@@ -1,0 +1,65 @@
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>RayJS (2022 Refresh)</title>
+
+	<meta name="description" content="Javascript and HTML5 implementation of Wolfenstein 3D style Ray Casting.">
+
+	<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    
+    <script src="js/DOM.js"></script>
+	<script src="js/NUM.js"></script>
+	<script src="js/GFX.js"></script>
+	<script src="js/GameConstants.js"></script>
+	<script src="js/GameMap.js"></script>
+	<script src="js/GameCamera.js"></script>
+	<script src="js/GameController.js"></script>
+	<script src="js/GameRay.js"></script>
+	<script src="js/GameEngine.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+	<div class="header-card"><b>RayJS (</b>2022 Refresh<b>)</b></div>
+
+	<div class="output-card">
+		<canvas id="bufferCanvas" style="display: none; visibility: hidden"></canvas>
+		<canvas id="outputCanvas"></canvas>
+	</div>
+
+	<div class="info-card">
+		<p><b>Use the WASD keys to move around and explore.</b></p>
+		<p>A fun little implementation of an old-school ray casting engine using HTML5 and Javascript. Originally created in 2014, this version is a 2022 refresh with a number of bug and performance fixes.</p>
+		<p>Early first person games (most notably Wolfenstein 3D) used ray casting to give the illusion of 3D perspective before computer hardware could handle true 3D graphics.</p>
+		<p>Now days ray casting is actually one of the least efficient ways to achieve this visual effect, but its simplicity makes it a great learning tool.</p>
+		<p>As the performance of direct pixel manipulation remains poor in Canvas2D, this implementation uses drawImage() for textures and therefore (like Wolfenstein 3D) is limited to textured walls only.</p>
+		<p>Should work in most modern browsers, having been tested in:</p>
+		<p>Chrome 104.0.5112, Edge 104.0.1293, and Firefox 104.0.1</p>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+
+function init()
+{
+	let engine = new GameEngine("outputCanvas", "bufferCanvas", 15, 10, 64);
+	engine.begin();
+}
+
+DOM.on(document, "DOMContentLoaded", init());
+
+</script>
+
+</body>
+
+</html>
