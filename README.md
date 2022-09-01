@@ -1,6 +1,8 @@
 # RayJS
 A fun little implementation of an old-school ray casting engine using HTML5 and Javascript. Originally created in 2014, this version is a 2022 refresh with a number of bug and performance fixes.
 
+![Preview of project in action.](https://raw.githubusercontent.com/aussieboosh/RayJS/main/imgs/preview.png)
+
 # Copyright / License
 Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
